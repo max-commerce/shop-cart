@@ -1,0 +1,21 @@
+{
+    "name": "max-commerce/shop-cart",
+    "description": "Maxcommerce cart module",
+    "homepage": "http://maxcommerce.ru/",
+    "type": "project",
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "git",
+            "url":  "https://github.com/max-commerce/shop-core.git"
+        }
+    ],
+    "require": {
+        "max-commerce/shop-core": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "maxcom\\cart\\": ""
+        }
+    }
+}
