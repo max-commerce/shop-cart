@@ -16,7 +16,7 @@ class AddItemController extends Controller
     public function actionIndex()
     {
 
-        return;
+        return $this->redirect('/cart');
 
     }
 }
