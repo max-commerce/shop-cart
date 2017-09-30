@@ -7,11 +7,11 @@
     "repositories": [
         {
             "type": "git",
-            "url":  "https://github.com/max-commerce/shop-core.git"
+            "url":  "https://github.com/max-commerce/shop-catalog.git"
         }
     ],
     "require": {
-        "max-commerce/shop-core": "dev-master"
+        "max-commerce/shop-catalog": "dev-master"
     },
     "autoload": {
         "psr-4": {
