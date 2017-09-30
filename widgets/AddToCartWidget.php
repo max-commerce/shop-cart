@@ -10,6 +10,8 @@ class AddToCartWidget extends Widget
 {
 
 	public $product;
+	public $btnText;
+	public $btnOptions;
 
 	public function run()
 	{
