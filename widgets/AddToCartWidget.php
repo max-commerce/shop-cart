@@ -9,14 +9,14 @@ use yii\helpers\Html;
 class AddToCartWidget extends Widget
 {
 
-	public $product;	
+	public $product;
 
-	public function run() {
+	public function run()
+	{
 
-		return '<form action="/cart/add">
-				<input type="hidden" name="product_id" value="' . $this->product->id . '" />
-				<input type="submit" class="btn btn-primary" value="Купить" />
-			</form>';
+		return $this->render('add_to_cart', [
+			'model' => $this->product
+		]); 
 
 	}
 
