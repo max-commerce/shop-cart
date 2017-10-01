@@ -4,22 +4,25 @@ namespace maxcom\cart\widgets;
 
 use Yii;
 use yii\base\Widget;
+use yii\data\ArrayDataProvider;
 
 class CartTableWidget extends Widget
 {
 
-  public $items;
+  public $dataProvider;
 
   public function init() {
 
-      $this->items = Yii::$app->cart->getItems();
+      $this->dataProvider = new ArrayDataProvider([
+          'allModels' => Yii::$app->cart->items
+      ]);
 
   }
 
   public function run() {
 
     return $this->render('cart_table', [
-      'items' => $this->items
+      'dataProvider' => $this->dataProvider
     ]);
 
   }
