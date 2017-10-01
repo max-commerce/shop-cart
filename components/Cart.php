@@ -49,7 +49,7 @@ class Cart extends Component
         if ($_items) {
 	        foreach ($_items as $data) {
 
-	        	if (!empty($data->product_id)) {
+	        	if (!empty($data->product_id) && !empty($data->product)) {
 
 		        	$lineItem = $this->createLineItem($data->product_id, $data->count);
 
