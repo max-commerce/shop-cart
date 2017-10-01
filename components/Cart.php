@@ -49,11 +49,16 @@ class Cart extends Component
         if ($_items) {
 	        foreach ($_items as $data) {
 
-	        	if (!empty($data->product_id) && !empty($data->product)) {
+	        	// проверяем что есть id товара
+	        	if (!empty($data->product_id)) {
 
 		        	$lineItem = $this->createLineItem($data->product_id, $data->count);
 
-					$this->_items[$data->product_id] = $lineItem;
+					// проверяем что такой товар существует в базе
+		        	if (!empty($lineItem->product)) {
+						$this->_items[$data->product_id] = $lineItem;
+		        	}
+
 	        	}
 
 	        }
