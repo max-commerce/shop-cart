@@ -10,7 +10,7 @@ $formId = 'addToCart-form-' . $model->id;
 //Not sure about this (cause each button will register script but for now nice)
 if($this->context->ajax){
 	$this->registerJs("
-		$(document).on('submit','#".$fromId."',function(e){
+		$(document).on('submit','#".$formId."',function(e){
 			e.preventDefault();
 			$.post($(this).attr('action'),$(this).serialize(),function(data){
 				".$this->context->ajaxResultCallback."
