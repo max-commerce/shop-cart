@@ -13,14 +13,12 @@ class AddToCartWidget extends Widget
 	public $btnText;
     public $ajax = true;
 	public $btnOptions;
-    public $ajaxResultCallback = "alert('Success!')";
+    public $ajaxResultCallback = "console.log(data); alert('Success!');";
 	public function run()
 	{
-
 		return $this->render('add_to_cart', [
 			'model' => $this->product
-		]); 
-
+		]);
 	}
 
 }
