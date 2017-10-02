@@ -21,7 +21,7 @@ class AddItemController extends Controller
 
 		if (empty($product_id)) {
             if (Yii::$app->request->isAjax){
-                return $this->asJson(['status' => 'error']);
+                return $this->asJson(['status' => 'error', 'code' => '304']);
             } else {
                 throw new yii\web\BadRequestHttpException('Bad Request.');
             }

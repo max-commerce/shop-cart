@@ -8,7 +8,7 @@ $btnOptions = $this->context->btnOptions ? $this->context->btnOptions : ['class'
 
 $formId = 'addToCart-form-' . $model->id;
 //Not sure about this (cause each button will register script but for now nice)
-if($this->context-ajax){
+if($this->context->ajax){
 	$this->registerJs("
 		$(document).on('submit','#".$fromId."',function(e){
 			e.preventDefault();
