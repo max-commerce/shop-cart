@@ -11,8 +11,9 @@ class AddToCartWidget extends Widget
 
 	public $product;
 	public $btnText;
+    public $ajax = true;
 	public $btnOptions;
-
+    public $ajaxResultCallback = "alert('Success!')";
 	public function run()
 	{
 
