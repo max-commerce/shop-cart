@@ -27,6 +27,16 @@ class Cart extends Component
     }
 
     /**
+     * @return array
+     */
+    public function getStatus(){
+        return [
+            'status' => 'success',
+            'total' => $this->total,
+            'products_count' => count($this->items),
+        ];
+    }
+    /**
      *
      */
     public function getTotal()
