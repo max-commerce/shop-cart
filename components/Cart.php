@@ -33,8 +33,11 @@ class Cart extends Component
         return [
             'status' => 'success',
             'total' => $this->total,
-            'products_count' => count($this->items),
+            'products_count' => $this->itemsCount,
         ];
+    }
+    public function getItemsCount(){
+        return count($this->items);
     }
     /**
      *
@@ -93,7 +96,6 @@ class Cart extends Component
             $lineItem = $this->createLineItem($product_id, $count);
             $this->_items[$product_id] = $lineItem;
         }
-
 
     	$this->saveItemsRepository();
     }
