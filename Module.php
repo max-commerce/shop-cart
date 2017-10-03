@@ -7,6 +7,9 @@ namespace maxcom\cart;
  */
 class Module extends \yii\base\Module
 {
+    //Service class for working with form from JS
+    const ADD_TO_CART_FORM_CLASS = 'max-comm-add-to-cart-form';
+
     /**
      * @inheritdoc
      */

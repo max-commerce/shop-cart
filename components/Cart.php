@@ -86,9 +86,14 @@ class Cart extends Component
     public function addItem($product_id, $count = 1)
     {
 
-    	$lineItem = $this->createLineItem($product_id, $count);
 
-    	$this->_items[$product_id] = $lineItem;
+        if(isset($this->_items[$product_id])){
+            $this->_items[$product_id]->count += 1;
+        } else {
+            $lineItem = $this->createLineItem($product_id, $count);
+            $this->_items[$product_id] = $lineItem;
+        }
+
 
     	$this->saveItemsRepository();
     }
