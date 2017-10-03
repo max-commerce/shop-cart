@@ -2,28 +2,23 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+\maxcom\cart\assets\CartAsset::register($this);
 $btnText = $this->context->btnText ? $this->context->btnText : 'Купить';
 $btnOptions = $this->context->btnOptions ? $this->context->btnOptions : ['class' => 'btn btn-primary'];
-//Service class for working with form from JS
-$formClass = 'max-comm-add-to-cart-form';
 $formId = 'addToCart-form-' . $model->id;
 //Not sure about this (cause each button will register script but for now nice)
 if($this->context->ajax){
 	$this->registerJs("
-		$(document).on('submit','.".$formClass."',function(e){
-			e.preventDefault();
-			$.post($(this).attr('action'),$(this).serialize(),function(data){
-				".$this->context->ajaxResultCallback."
-			});
-		});	
-	",\yii\web\View::POS_READY);
+		function maxCommAddToCartSuccess(data){
+			".$this->context->ajaxResultCallback."
+		}
+	", \yii\web\View::POS_BEGIN);
 }
 
 $form = ActiveForm::begin([
     'id' => $formId,
 	'options' => [
-		'class' => $formClass,
+		'class' => \maxcom\cart\Module::ADD_TO_CART_FORM_CLASS,
 	],
     'method' => 'post',
     'action' => '/cart/add-item'
