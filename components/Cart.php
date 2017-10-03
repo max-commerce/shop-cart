@@ -88,7 +88,7 @@ class Cart extends Component
 
 
         if(isset($this->_items[$product_id])){
-            $this->_items[$product_id]->count += 1;
+            $this->_items[$product_id]->count += $count;
         } else {
             $lineItem = $this->createLineItem($product_id, $count);
             $this->_items[$product_id] = $lineItem;
